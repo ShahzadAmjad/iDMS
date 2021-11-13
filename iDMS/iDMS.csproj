@@ -5,21 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Audit\ElectricalCableCivilAudit\" />
-    <Folder Include="Models\Audit\ElectricalDistributionAudit\" />
-    <Folder Include="Models\Audit\ElectricalJointingAudit\" />
-    <Folder Include="Models\Audit\EnvironmentalSiteAudit\" />
-    <Folder Include="Models\Audit\GasTechnicalAudit\" />
-    <Folder Include="Models\Audit\HealthSafetyAudit\" />
-    <Folder Include="Models\Audit\ElectricalCableTechnical\" />
-    <Folder Include="Models\Home\" />
-    <Folder Include="Views\Audit\ElectricalCableCivilAudit\" />
-    <Folder Include="Views\Audit\ElectricalCableTechnical\" />
-    <Folder Include="Views\Audit\ElectricalDistributionAudit\" />
-    <Folder Include="Views\Audit\ElectricalJointingAudit\" />
-    <Folder Include="Views\Audit\EnvironmentalSiteAudit\" />
-    <Folder Include="Views\Audit\GasTechnicalAudit\" />
-    <Folder Include="Views\Audit\HealthSafetyAudit\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
