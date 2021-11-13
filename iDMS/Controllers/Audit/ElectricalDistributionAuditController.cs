@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace iDMS.Controllers
+namespace iDMS.Controllers.Audit
 {
-    public class AuditController : Controller
+    public class ElectricalDistributionAuditController : Controller
     {
         public IActionResult Index()
         {
