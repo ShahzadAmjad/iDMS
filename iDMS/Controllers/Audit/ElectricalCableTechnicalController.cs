@@ -10,7 +10,12 @@ namespace iDMS.Controllers.Audit
     {
         public IActionResult Index()
         {
-            return View();
+            return View("ElectricalCableTechnical");
+        }
+        [HttpGet]
+        public ViewResult ElectricalCableTechnicalAudit()
+        {
+            return View("ElectricalCableTechnical");
         }
     }
 }

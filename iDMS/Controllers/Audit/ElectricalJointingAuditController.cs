@@ -10,7 +10,11 @@ namespace iDMS.Controllers.Audit
     {
         public IActionResult Index()
         {
-            return View();
+            return View("ElectricalJointing");
+        }
+        public ViewResult ElectricalJointingAudit()
+        {
+            return View("ElectricalJointing");
         }
     }
 }
