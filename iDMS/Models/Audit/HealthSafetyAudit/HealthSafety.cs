@@ -9,7 +9,7 @@ namespace iDMS.Models.Audit.HealthSafetyAudit
     public class HealthSafety
     {
         [Key]
-        public int electricalCableCivilId { get; set; }
+        public int HealthSafetyId { get; set; }
         public string locationOfWork { get; set; }
         public string typeOfWork { get; set; }
         public string teamLeader { get; set; }
