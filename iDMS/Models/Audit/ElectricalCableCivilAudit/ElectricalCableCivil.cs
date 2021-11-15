@@ -37,18 +37,17 @@ namespace iDMS.Models.Audit.ElectricalCableCivilAudit
         public string depthOfBeddingMaterial { get; set; }
 
         //Main part
-
-
         public string notesAndObservations { get; set; }
-        public string remedialActionTaken { get; set; }
+        //•	Multiple lines can be added here, each one with following fields:
+        public string nonConformance  { get; set; }
 
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
+        public string LocationOfWork { get; set; }
+        public string owner  { get; set; }
+        public string target { get; set; }
+        public string closed { get; set; }
+        public DateTime date { get; set; }
+        public string signature { get; set; }
+        public string overallCommentsAndAssesment { get; set; }
         //public string LocationOfWork { get; set; }
         //public string LocationOfWork { get; set; }
         //public string LocationOfWork { get; set; }
