@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace iDMS.Controllers.Audit
 {
-    public class ElectricalCableTechnicalController : Controller
+    public class ElectricalCableTechnicalAuditController : Controller
     {
         public IActionResult Index()
         {
-            return View("ElectricalCableTechnical");
+            return View("~/Views/Audit/ElectricalCableTechnicalAudit/ElectricalCableTechnical.cshtml");
         }
         [HttpGet]
         public ViewResult ElectricalCableTechnicalAudit()
         {
-            return View("ElectricalCableTechnical");
+            return View("~/Views/Audit/ElectricalCableTechnicalAudit/ElectricalCableTechnical.cshtml");
         }
     }
 }

@@ -10,11 +10,11 @@ namespace iDMS.Controllers.Audit
     {
         public IActionResult Index()
         {
-            return View("ElectricalDistribution");
+            return View("~/Views/Audit/ElectricalDistributionAudit/ElectricalDistribution.cshtml");
         }
         public ViewResult ElectricalDistributionAudit()
         {
-            return View("ElectricalDistribution");
+            return View("~/Views/Audit/ElectricalDistributionAudit/ElectricalDistribution.cshtml");
         }
     }
 }

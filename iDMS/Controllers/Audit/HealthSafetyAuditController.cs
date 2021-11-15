@@ -10,11 +10,11 @@ namespace iDMS.Controllers.Audit
     {
         public IActionResult Index()
         {
-            return View("HealthSafety");
+            return View("~/Views/Audit/HealthSafetyAudit/HealthSafety.cshtml");
         }
         public ViewResult HealthSafetyAudit()
         {
-            return View("HealthSafety");
+            return View("~/Views/Audit/HealthSafetyAudit/HealthSafety.cshtml");
         }
     }
 }

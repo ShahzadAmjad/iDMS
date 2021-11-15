@@ -10,11 +10,11 @@ namespace iDMS.Controllers.Audit
     {
         public IActionResult Index()
         {
-            return View("GasTechnical");
+            return View("~/Views/Audit/GasTechnicalAudit/GasTechnical.cshtml");
         }
         public ViewResult GasTechnicalAudit()
         {
-            return View("GasTechnical");
+            return View("~/Views/Audit/GasTechnicalAudit/GasTechnical.cshtml");
         }
     }
 }
