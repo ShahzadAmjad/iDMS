@@ -1,1 +1,153 @@
-﻿HealthSafety
+﻿@model HealthSafety
+
+
+@{
+    ViewBag.Title = "Health & safety site inspection audit";
+}
+
+<div class="" role="main">
+    <div class="">
+        <div class="page-title">
+            <div class="title_left">
+                <h3>Health & Safety Audit</h3>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 ">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Health & Safety Audit</h2>
+
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <br />
+                        @using (Html.BeginForm("HealthSafetyAudit", "HealthSafetyAudit", FormMethod.Post))
+
+
+@*<form id="BusniessDetailsForm" data-parsley-validate class="form-horizontal form-label-left" asp-controller="HealthSafetyAudit" asp-action="HealthSafetyAudit" method="post">*@  
+                        {
+                                <div class="item form-group">
+                                    <label asp-for="locationOfWork" class="col-form-label col-md-3 col-sm-3 label-align">
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 ">
+                                        <input type="text" asp-for="locationOfWork" id="locationOfWork" name="locationOfWork" class="form-control">
+                                    </div>
+                                </div>
+
+
+                                <div class="item form-group">
+                                    <label asp-for="typeOfWork" class="col-form-label col-md-3 col-sm-3 label-align">
+
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 ">
+                                        <input type="text" asp-for="typeOfWork" id="typeOfWork" name="typeOfWork" required="required" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="item form-group">
+                                    <label asp-for="teamLeader" class="col-form-label col-md-3 col-sm-3 label-align">
+
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 ">
+                                        <input asp-for="teamLeader" id="teamLeader" name="teamLeader" class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="item form-group">
+                                    <label asp-for="contractor" class="col-form-label col-md-3 col-sm-3 label-align">
+
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 ">
+                                        <input asp-for="contractor" id="contractor" name="contractor" class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="item form-group">
+                                    <label asp-for="projectNo" class="col-form-label col-md-3 col-sm-3 label-align">
+
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 ">
+                                        <input asp-for="projectNo" id="projectNo" name="projectNo" class="form-control" type="text">
+                                    </div>
+                                </div>
+
+                                <div class="item form-group">
+                                    <label asp-for="dateTime" class="col-form-label col-md-3 col-sm-3 label-align">
+
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 ">
+                                        <input asp-for="dateTime" id="dateTime" name="dateTime" class="date-picker form-control" placeholder="dd-mm-yyyy">
+                                    </div>
+                                </div>
+
+                                @*@using (Html.BeginForm())*@
+                                {
+                                    for (int i = 0; i < @Model.auditQuestionsLst.Count(); i++)
+                                    {
+                                        <div class="item form-group">
+                                            <span class="col-form-label col-md-3 col-sm-3 label-align">@Html.DisplayFor(m => m.auditQuestionsLst[i].qustionText)</span>
+                                            <div class="col-md-6 col-sm-6 ">
+                                                <div class="text-center">
+                                                    <div class="form-check form-check-inline">
+                                                        @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "Yes")
+                                                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "No")
+                                                        <label class="form-check-label" for="inlineRadio1">No</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "NA")
+                                                        <label class="form-check-label" for="inlineRadio1">NA</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3 label-align">
+                                                Comments
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 ">
+                                                @Html.TextBoxFor(model => model.auditQuestionsLst[i].comments, new { @class = "form-control" })
+                                            </div>
+                                        </div>
+                                    }
+                                }
+
+
+
+                                <div class="item form-group">
+                                    <label asp-for="defectFound" class="col-form-label col-md-3 col-sm-3 label-align">
+
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 ">
+                                        <input asp-for="defectFound" id="defectFound" name="defectFound" class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="item form-group">
+                                    <label asp-for="remedialActionTaken" class="col-form-label col-md-3 col-sm-3 label-align">
+
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 ">
+                                        <input asp-for="remedialActionTaken" id="remedialActionTaken" name="remedialActionTaken" class="form-control" type="text">
+                                    </div>
+                                </div>
+
+
+                                <div class="ln_solid"></div>
+                                <div class="item form-group">
+                                    <div class="col-md-6 col-sm-6 offset-md-3">
+                                        <button class="btn btn-primary" type="button">Cancel</button>
+                                        @*<button class="btn btn-primary" type="reset">Reset</button>*@
+
+                                        <button type="submit" class="btn btn-success">Submit</button>
+                                    </div>
+                                </div>
+                        }
+                            @*</form>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
