@@ -82,25 +82,26 @@
                                 
                                     for (int i = 0; i < @Model.auditQuestionsLst.Count(); i++)
                                     {
-                                        <div class="item form-group">
-                                            @*@Html.TextBoxFor(model => model.auditQuestionsLst[i].qustionText, new { @class = "form-control" })*@                      
-                                            <span class="col-form-label col-md-3 col-sm-3 label-align">@Html.DisplayFor(m => m.auditQuestionsLst[i].qustionText)</span>
-                                            <div class="col-md-6 col-sm-6 ">
-                                                <div class="text-center">
-                                                    <div class="form-check form-check-inline">
+                    <div class="item form-group">
+                        @*@Html.TextBoxFor(model => model.auditQuestionsLst[i].qustionText, new { @class = "form-control" })*@
+                        <span class="col-form-label text-center col-md-12 col-sm-12  label-align">@Html.DisplayFor(m => m.auditQuestionsLst[i].qustionText)</span>
+                    </div>
+                                            <div class=" " style="margin-left: 27%">
+                                                <div class="" >
+                                                    <div class="form-check form-check-inline" >
                                                         @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "Yes")
                                                         <label class="form-check-label" for="inlineRadio1">Yes</label>
                                                     </div>
-                                                    <div class="form-check form-check-inline">
+                                                    <div class="form-check form-check-inline" >
                                                         @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "No")
                                                         <label class="form-check-label" for="inlineRadio1">No</label>
                                                     </div>
-                                                    <div class="form-check form-check-inline">
+                                                    <div class="form-check form-check-inline" >
                                                         @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "NA")
                                                         <label class="form-check-label" for="inlineRadio1">NA</label>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            
                                         </div>
                                         <div class="item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3 label-align">
