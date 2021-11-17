@@ -15,7 +15,7 @@ namespace iDMS.Models.Audit.ElectricalCableCivilAudit
         public string operative1  { get; set; }
         public string operative2 { get; set; }
         public string client { get; set; }
-
+        public string auditor { get; set; }
         public int jobRefNo { get; set; }
         public string typeOfWork { get; set; }
         public DateTime dateOfAudit { get; set; }
@@ -43,7 +43,7 @@ namespace iDMS.Models.Audit.ElectricalCableCivilAudit
 
         public string LocationOfWork { get; set; }
         public string owner  { get; set; }
-        public string target { get; set; }
+        public string targetDate { get; set; }
         public string closed { get; set; }
         public DateTime date { get; set; }
         public string signature { get; set; }
