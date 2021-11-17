@@ -10,6 +10,11 @@ namespace iDMS.Controllers.Audit
 {
     public class EnvironmentalSiteAuditController : Controller
     {
+        private IEnvironmentalSiteRepository _environmentalSiteRepository;
+        public EnvironmentalSiteAuditController(IEnvironmentalSiteRepository environmentalSiteRepository)
+        {
+            _environmentalSiteRepository = environmentalSiteRepository;
+        }
         public IActionResult Index()
         {
             return View("~/Views/Audit/EnvironmentalSiteAudit/EnvironmentalSite.cshtml");
@@ -111,8 +116,8 @@ namespace iDMS.Controllers.Audit
         [HttpPost]
         public IActionResult EnvironmentalSiteAudit(EnvironmentalSite environmentalSite)
         {
-
-            return View("~/Views/Audit/EnvironmentalSiteAudit/EnvironmentalSite.cshtml");
+            _environmentalSiteRepository.Add(environmentalSite);
+            return View("~/Views/Home/Home.cshtml");
         }
     }
 }

@@ -10,6 +10,11 @@ namespace iDMS.Controllers.Audit
 {
     public class HealthSafetyAuditController : Controller
     {
+        private IHealthSafetyRepository _healthSafetyRepository;
+        public HealthSafetyAuditController(IHealthSafetyRepository healthSafetyRepository)
+        {
+            _healthSafetyRepository = healthSafetyRepository;
+        }
         public IActionResult Index()
         {
             return View("~/Views/Audit/HealthSafetyAudit/HealthSafety.cshtml");
@@ -86,8 +91,10 @@ namespace iDMS.Controllers.Audit
         [HttpPost]
         public IActionResult HealthSafetyAudit(HealthSafety healthSafety)
         {
+            _healthSafetyRepository.Add(healthSafety);
 
-            return View("~/Views/Audit/HealthSafetyAudit/HealthSafety.cshtml");
+
+            return View("~/Views/Home/Home.cshtml");
         }
     }
 }

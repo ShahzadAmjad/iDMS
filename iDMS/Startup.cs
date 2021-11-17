@@ -1,3 +1,6 @@
+using iDMS.Models;
+using iDMS.Models.Audit.EnvironmentalSiteAudit;
+using iDMS.Models.Audit.HealthSafetyAudit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -24,9 +27,13 @@ namespace iDMS
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(_config.GetConnectionString("LenSysDBConnection"), sqlServerOptions => sqlServerOptions.CommandTimeout(60)));
-
+            services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(_config.GetConnectionString("iDMS_DBConnection"), sqlServerOptions => sqlServerOptions.CommandTimeout(60)));
             services.AddMvc(options => options.EnableEndpointRouting = false);
+
+
+            //For SQL classes
+            services.AddScoped<IHealthSafetyRepository, SQLHealthSafetyRepository>();
+            services.AddScoped<IEnvironmentalSiteRepository, SQLEnvironmentalSiteRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
