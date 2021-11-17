@@ -82,11 +82,12 @@
                                 
                                     for (int i = 0; i < @Model.auditQuestionsLst.Count(); i++)
                                     {
-                    <div class="item form-group">
-                        @*@Html.TextBoxFor(model => model.auditQuestionsLst[i].qustionText, new { @class = "form-control" })*@
-                        <span class="col-form-label text-center col-md-12 col-sm-12  label-align">@Html.DisplayFor(m => m.auditQuestionsLst[i].qustionText)</span>
-                    </div>
-                                            <div class=" " >
+                                        <div class="item form-group">
+                                            @*text box to get the question text*@
+                                            @Html.TextBoxFor(model => model.auditQuestionsLst[i].qustionText, new { @hidden = "true" })
+                                            <span class="col-form-label text-center col-md-12 col-sm-12  label-align">@Html.DisplayFor(m => m.auditQuestionsLst[i].qustionText)</span>
+                                        </div>
+
                                                 <div class="text-center" >
                                                     <div class="form-check form-check-inline" >
                                                         @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "Yes")
@@ -102,10 +103,8 @@
                                                     </div>
                                                 </div>
                                             
-                                        </div>
                                         <div class="item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3 label-align">
-                                               
+                                            <label class="col-form-label col-md-3 col-sm-3 label-align">         
                                             </label>
                                             <div class="col-md-6 col-sm-6 ">
                                                 @Html.TextBoxFor(model => model.auditQuestionsLst[i].comments, new { @class = "form-control", placeholder = "Comments" })
@@ -138,7 +137,7 @@
                                 <div class="item form-group">
                                     <div class="col-md-6 col-sm-6 offset-md-3">
                                         <button class="btn btn-primary" type="button">Cancel</button>
-                                        @*<button class="btn btn-primary" type="reset">Reset</button>*@
+                                        <button class="btn btn-primary" type="reset">Signature</button>
 
                                         <button type="submit" class="btn btn-success">Submit</button>
                                     </div>
