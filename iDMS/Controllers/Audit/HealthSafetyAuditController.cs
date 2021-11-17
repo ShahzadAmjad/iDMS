@@ -18,8 +18,7 @@ namespace iDMS.Controllers.Audit
         public ViewResult HealthSafetyAudit()
         {
             HealthSafety healthSafety = new HealthSafety();
-            healthSafety.auditQuestionsLst = new List<AuditQuestions>() { };
-            //AuditQuestions question1 = new AuditQuestions { qustionText = "Is the approved Health & Safety Plan and/or site-specific Method Statements on site?", ansawer = "Yes", comments = "NA" };
+            healthSafety.auditQuestionsLst = new List<AuditQuestions>() { };           
             AuditQuestions question1 = new AuditQuestions { qustionText= "Is the approved Health & Safety Plan and/or site-specific Method Statements on site?",  ansawer = "Yes" };
             AuditQuestions question2 = new AuditQuestions { qustionText = "Have all operatives accepted and signed onto the RAMS?", ansawer = "Yes" };
             AuditQuestions question3 = new AuditQuestions { qustionText = "Is the site clean and generally tidy and contained within a secure working area?", ansawer = "Yes" };
