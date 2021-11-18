@@ -12,6 +12,7 @@ namespace iDMS.Controllers.Audit
         {
             return View("~/Views/Audit/ElectricalDistributionAudit/ElectricalDistribution.cshtml");
         }
+        [HttpGet]
         public ViewResult ElectricalDistributionAudit()
         {
             return View("~/Views/Audit/ElectricalDistributionAudit/ElectricalDistribution.cshtml");
