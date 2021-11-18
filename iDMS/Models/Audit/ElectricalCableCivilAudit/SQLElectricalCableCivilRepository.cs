@@ -14,8 +14,8 @@ namespace iDMS.Models.Audit.ElectricalCableCivilAudit
         }
         public ElectricalCableCivil Add(ElectricalCableCivil electricalCableCivil)
         {
-            //Context.HealthSafetyAudit.Add(electricalCableCivil);
-            //Context.SaveChanges();
+            Context.ElectricalCableCivilAudit.Add(electricalCableCivil);
+            Context.SaveChanges();
             return electricalCableCivil;
         }
     }
