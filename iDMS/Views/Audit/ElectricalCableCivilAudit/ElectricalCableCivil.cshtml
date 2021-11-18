@@ -127,13 +127,13 @@
                                 </div>
                             </div>
 
-                            //Audit questions
+                            //Audit questions Set A – Excavations (Part 1)
                             <div class="x_title">
-                                <h2>Audit Questions </h2>
+                                <h2>Audit Questions Set A Excavations</h2>
                                 <div class="clearfix"></div>
                             </div>
 
-                            for (int i = 1; i < 4; i++)
+                            for (int i = 1; i < 3; i++)
                             {
                                 <div class="item form-group">
                                     @*text box to get the question text*@
@@ -155,7 +155,133 @@
                                         <label class="form-check-label" for="inlineRadio1">NA</label>
                                     </div>
                                 </div>
-                                //No comment section 
+                                //No comment section
+                                <div class="item form-group">
+                                    <label class="col-form-label col-md-3 col-sm-3 label-align">
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 ">
+                                        @Html.TextBoxFor(model => model.auditQuestionsLst[i].comments, new { @class = "form-control", placeholder = "Comments" })
+                                    </div>
+                                </div>
+                            }
+                            //Depth of excavation dependent on voltage (mm) [textarea]
+                            <div class="item form-group">
+                                <label asp-for="depthOfExcavation" class="col-form-label col-md-3 col-sm-3 label-align">
+
+                                </label>
+                                <div class="col-md-6 col-sm-6 ">
+                                    <input asp-for="depthOfExcavation" id="depthOfExcavation" name="depthOfExcavation" class="form-control" type="text">
+                                </div>
+                            </div>
+
+                            //Audit questions Set A – Excavations (part 2)
+                            for (int i = 3; i < 12; i++)
+                            {
+                                <div class="item form-group">
+                                    @*text box to get the question text*@
+                                    @Html.TextBoxFor(model => model.auditQuestionsLst[i].qustionText, new { @hidden = "true" })
+                                    <span class="col-form-label text-center col-md-12 col-sm-12  label-align">@Html.DisplayFor(m => m.auditQuestionsLst[i].qustionText)</span>
+                                </div>
+
+                                <div class="text-center">
+                                    <div class="form-check form-check-inline">
+                                        @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "Yes")
+                                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "No")
+                                        <label class="form-check-label" for="inlineRadio1">No</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "NA")
+                                        <label class="form-check-label" for="inlineRadio1">NA</label>
+                                    </div>
+                                </div>
+                                //No comment section
+                                <div class="item form-group">
+                                    <label class="col-form-label col-md-3 col-sm-3 label-align">
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 ">
+                                        @Html.TextBoxFor(model => model.auditQuestionsLst[i].comments, new { @class = "form-control", placeholder = "Comments" })
+                                    </div>
+                                </div>
+                            }
+                            //What type of ducting is being used? [textarea]
+                            <div class="item form-group">
+                                <label asp-for="TypeOfDucting" class="col-form-label col-md-3 col-sm-3 label-align">
+
+                                </label>
+                                <div class="col-md-6 col-sm-6 ">
+                                    <input asp-for="TypeOfDucting" id="TypeOfDucting" name="TypeOfDucting" class="form-control" type="text">
+                                </div>
+                            </div>
+
+                            //Audit questions o	Set B – Cable Installation  (Part 1)
+                            <div class="x_title">
+                                <h2>Audit Questions Set B – Cable Installation</h2>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            //some text fields in SET B Cable Installation (total 4)
+                            <div class="item form-group">
+                                <label asp-for="cableTypeAndSize" class="col-form-label col-md-3 col-sm-3 label-align">
+
+                                </label>
+                                <div class="col-md-6 col-sm-6 ">
+                                    <input asp-for="cableTypeAndSize" id="cableTypeAndSize" name="cableTypeAndSize" class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <label asp-for="cableLength" class="col-form-label col-md-3 col-sm-3 label-align">
+
+                                </label>
+                                <div class="col-md-6 col-sm-6 ">
+                                    <input asp-for="cableLength" id="cableLength" name="cableLength" class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <label asp-for="typeOfBeddingMaterial" class="col-form-label col-md-3 col-sm-3 label-align">
+
+                                </label>
+                                <div class="col-md-6 col-sm-6 ">
+                                    <input asp-for="typeOfBeddingMaterial" id="typeOfBeddingMaterial" name="typeOfBeddingMaterial" class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <label asp-for="depthOfBeddingMaterial" class="col-form-label col-md-3 col-sm-3 label-align">
+
+                                </label>
+                                <div class="col-md-6 col-sm-6 ">
+                                    <input asp-for="depthOfBeddingMaterial" id="depthOfBeddingMaterial" name="depthOfBeddingMaterial" class="form-control" type="text">
+                                </div>
+                            </div>
+
+
+                           
+
+                            for (int i = 12; i < Model.auditQuestionsLst.Count(); i++)
+                            {
+                                <div class="item form-group">
+                                    @*text box to get the question text*@
+                                    @Html.TextBoxFor(model => model.auditQuestionsLst[i].qustionText, new { @hidden = "true" })
+                                    <span class="col-form-label text-center col-md-12 col-sm-12  label-align">@Html.DisplayFor(m => m.auditQuestionsLst[i].qustionText)</span>
+                                </div>
+
+                                <div class="text-center">
+                                    <div class="form-check form-check-inline">
+                                        @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "Yes")
+                                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "No")
+                                        <label class="form-check-label" for="inlineRadio1">No</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "NA")
+                                        <label class="form-check-label" for="inlineRadio1">NA</label>
+                                    </div>
+                                </div>
+                                //No comment section
                                 <div class="item form-group">
                                     <label class="col-form-label col-md-3 col-sm-3 label-align">
                                     </label>
@@ -234,7 +360,7 @@
                                 </div>
                             </div>
 
-                            //•	Overall comments and assessment 
+                            //•	Overall comments and assessment
                             <div class="x_title">
                                 <h2>Overall comments and assessment</h2>
                                 <div class="clearfix"></div>
@@ -248,7 +374,7 @@
                                     <input asp-for="overallCommentsAndAssesment" id="overallCommentsAndAssesment" name="overallCommentsAndAssesment" class="form-control" type="text">
                                 </div>
                             </div>
-                            
+
 
                             <div class="ln_solid"></div>
                             <div class="item form-group">
