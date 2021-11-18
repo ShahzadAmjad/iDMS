@@ -10,6 +10,11 @@ namespace iDMS.Controllers.Audit
 {
     public class ElectricalCableCivilAuditController : Controller
     {
+        private IElectricalCableCivilRepository _electricalCableCivilRepository;
+        public ElectricalCableCivilAuditController(IElectricalCableCivilRepository electricalCableCivilRepository)
+        {
+            _electricalCableCivilRepository = electricalCableCivilRepository;
+        }
         public IActionResult Index()
         {
             return View("~/Views/Audit/ElectricalCableCivilAudit/ElectricalCableCivil.cshtml");
@@ -112,7 +117,7 @@ namespace iDMS.Controllers.Audit
         [HttpPost]
         public IActionResult ElectricalCableCivilAudit(ElectricalCableCivil electricalCableCivil)
         {
-            //_healthSafetyRepository.Add(healthSafety);
+            _electricalCableCivilRepository.Add(electricalCableCivil);
 
 
             return View("~/Views/Home/Home.cshtml");
