@@ -79,18 +79,6 @@ namespace iDMS.Models.Audit.ElectricalCableCivilAudit
         public string signature { get; set; }
         [DisplayName("Overall comments and assessment")]
         public string overallCommentsAndAssesment { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
+
     }
 }

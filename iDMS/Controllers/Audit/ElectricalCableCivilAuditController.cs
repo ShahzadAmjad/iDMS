@@ -109,7 +109,14 @@ namespace iDMS.Controllers.Audit
             return View("~/Views/Audit/ElectricalCableCivilAudit/ElectricalCableCivil.cshtml", electricalCableCivil);
         }
 
+        [HttpPost]
+        public IActionResult ElectricalCableCivilAudit(ElectricalCableCivil electricalCableCivil)
+        {
+            //_healthSafetyRepository.Add(healthSafety);
 
+
+            return View("~/Views/Home/Home.cshtml");
+        }
 
     }
 }
