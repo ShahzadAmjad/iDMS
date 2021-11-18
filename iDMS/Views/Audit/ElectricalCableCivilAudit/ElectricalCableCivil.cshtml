@@ -126,17 +126,18 @@
                                     <input asp-for="dateTime" id="dateTime" name="dateTime" class="date-picker form-control" placeholder="dd-mm-yyyy">
                                 </div>
                             </div>
-                            <!--//Audit questions
+
+                            //Audit questions
                             <div class="x_title">
                                 <h2>Audit Questions </h2>
                                 <div class="clearfix"></div>
                             </div>
 
-                            for (int i = 0; i < @Model.auditQuestionsLst.Count(); i++)
+                            for (int i = 1; i < 4; i++)
                             {
-                                <div class="item form-group">-->
+                                <div class="item form-group">
                                     @*text box to get the question text*@
-                                    <!--@Html.TextBoxFor(model => model.auditQuestionsLst[i].qustionText, new { @hidden = "true" })
+                                    @Html.TextBoxFor(model => model.auditQuestionsLst[i].qustionText, new { @hidden = "true" })
                                     <span class="col-form-label text-center col-md-12 col-sm-12  label-align">@Html.DisplayFor(m => m.auditQuestionsLst[i].qustionText)</span>
                                 </div>
 
@@ -154,7 +155,7 @@
                                         <label class="form-check-label" for="inlineRadio1">NA</label>
                                     </div>
                                 </div>
-
+                                //No comment section 
                                 <div class="item form-group">
                                     <label class="col-form-label col-md-3 col-sm-3 label-align">
                                     </label>
@@ -162,7 +163,7 @@
                                         @Html.TextBoxFor(model => model.auditQuestionsLst[i].comments, new { @class = "form-control", placeholder = "Comments" })
                                     </div>
                                 </div>
-                            }-->
+                            }
 
 
                             //Additional Information

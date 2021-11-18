@@ -24,35 +24,48 @@ namespace iDMS.Controllers.Audit
         {
             HealthSafety healthSafety = new HealthSafety();
             healthSafety.auditQuestionsLst = new List<AuditQuestions>() { };           
-            AuditQuestions question1 = new AuditQuestions { qustionText= "Is the approved Health & Safety Plan and/or site-specific Method Statements on site?",  ansawer = "Yes" };
-            AuditQuestions question2 = new AuditQuestions { qustionText = "Have all operatives accepted and signed onto the RAMS?", ansawer = "Yes" };
-            AuditQuestions question3 = new AuditQuestions { qustionText = "Is the site clean and generally tidy and contained within a secure working area?", ansawer = "Yes" };
-            AuditQuestions question4 = new AuditQuestions { qustionText = "Are all the drawings available on site?", ansawer = "Yes", comments = "NA" };
-            AuditQuestions question5 = new AuditQuestions { qustionText = "Are all drawings available the latest versions?", ansawer = "Yes" };
-            AuditQuestions question6 = new AuditQuestions { qustionText = "Is a permit to work system (required for all work involving live electrical installations) being used?", ansawer = "Yes"};
-            AuditQuestions question7 = new AuditQuestions { qustionText = "Is all equipment being tested before installing/modifying to ensure it has been isolated and is not live?", ansawer = "Yes" };
-            AuditQuestions question8 = new AuditQuestions { qustionText = "Are all operatives using/wearing appropriate PPE? Ensure all mandatory PPE, including rubber mats and insulated tools, are used when working with live installation", ansawer = "Yes" };
-            AuditQuestions question9 = new AuditQuestions { qustionText = "Does the equipment have a proper earthing connection to the supply?", ansawer = "Yes" };
-            AuditQuestions question10 = new AuditQuestions { qustionText = "Do works reflect the safe system of work specified within the site-specific Method Statement?", ansawer = "Yes"};
-            AuditQuestions question11 = new AuditQuestions { qustionText = "Has Contractor’s H&S officer carried out Weekly/Monthly Health & Safety checks (Toolbox Talks)?", ansawer = "Yes"};
-            AuditQuestions question12 = new AuditQuestions { qustionText = "Have operatives been given a Toolbox Talk within the last month?", ansawer = "Yes" };
-            AuditQuestions question13 = new AuditQuestions { qustionText = "Are all portable and hand-held tools in good working condition and adequately insulated?", ansawer = "Yes" };
-            AuditQuestions question14 = new AuditQuestions { qustionText = "Is all mains voltage equipment free of any mechanical damage? ", ansawer = "Yes"};
-            AuditQuestions question15 = new AuditQuestions { qustionText = "Are Daily Activity Briefings (DABs) taking place and is the information suitable and sufficient? ", ansawer = "Yes" };
-            AuditQuestions question16 = new AuditQuestions { qustionText = "Do all operatives have relevant accreditations, and are they in date?", ansawer = "Yes"};
-            AuditQuestions question17 = new AuditQuestions { qustionText = "Is/are competent person(s) undertaking the electrical installation works?", ansawer = "Yes"};
-            AuditQuestions question18 = new AuditQuestions { qustionText = "Are there Emergency procedures in place for an electric shock casualty and are the required personnel aware of what to do in the event of such a casualty occurring?", ansawer = "Yes" };
-            AuditQuestions question19 = new AuditQuestions { qustionText = "Are there sufficient toilet & welfare facilities available for use on site?", ansawer = "Yes"  };
-            AuditQuestions question20 = new AuditQuestions { qustionText = "Check for correct rating of fuses and switchgear at the point of supply If variation job, is all the documentation complete ?", ansawer = "Yes" };
-            AuditQuestions question21 = new AuditQuestions { qustionText = "Is the client/site management satisfied with quality of work and compliance with site safety?", ansawer = "Yes" };
-            AuditQuestions question22 = new AuditQuestions { qustionText = "Is team paperwork to required standard?", ansawer = "Yes"};
-            AuditQuestions question23 = new AuditQuestions { qustionText = "Are/Were all power supplies isolated, with stringent lockout procedures in place and with all switchgear and distribution panels securely locked and signed, before works commence(d)?", ansawer = "Yes" };
-            AuditQuestions question24 = new AuditQuestions { qustionText = "Are portable light fittings being used to prevent injuries and to be prepared for any hazardous situation?", ansawer = "Yes"};
-            AuditQuestions question25 = new AuditQuestions { qustionText = "Are dedicated wire and cable strippers being used for wirings and cabling?", ansawer = "Yes" };
-            AuditQuestions question26 = new AuditQuestions { qustionText = "Ensure of electrical installation work is a minimum two-man operation by one as competent personnel", ansawer = "Yes" };
-            AuditQuestions question27 = new AuditQuestions { qustionText = "Are cables or wires being securely fixed so they do not create a trip hazard?", ansawer = "Yes" };
-            AuditQuestions question28 = new AuditQuestions { qustionText = "Are all the materials being used in accordance with the relevant DNO’s/IDNO’s technical specification and requirements for the project, when checked against the Design Materials list?", ansawer = "Yes" };
-            AuditQuestions question29 = new AuditQuestions { qustionText = "Is there a First Aid Kit, Eye Wash and Fire Extinguisher onsite and within expiry date?", ansawer = "Yes" };
+            AuditQuestions question1 = new AuditQuestions { qustionText= "Surface being excavated (footway, carriageway, arable, etc.)?",  ansawer = "Yes" };
+            AuditQuestions question2 = new AuditQuestions { qustionText = "Is the excavation the required depth for the installation of the cable and surroundings?", ansawer = "Yes" };
+            AuditQuestions question3 = new AuditQuestions { qustionText = "Is the excavation in the correct position according to the information from the client?", ansawer = "Yes" };
+            AuditQuestions question4 = new AuditQuestions { qustionText = "Does the excavation have the correct radii on the bends that is correct for cable installation?", ansawer = "Yes" };
+            AuditQuestions question5 = new AuditQuestions { qustionText = "Is the excavation free from sharp objects that can damage the cable when installed?", ansawer = "Yes" };
+            AuditQuestions question6 = new AuditQuestions { qustionText = "Is the excavation wide enough to allow the correct spacing between cables if more than 1 cable is installed?", ansawer = "Yes"};
+            AuditQuestions question7 = new AuditQuestions { qustionText = "Are joint bays the correct size to allow jointing to be carried out safely?", ansawer = "Yes" };
+            AuditQuestions question8 = new AuditQuestions { qustionText = "If ducting being installed, does it comply to the correct specification?", ansawer = "Yes" };
+            AuditQuestions question9 = new AuditQuestions { qustionText = "Is the ducting the correct size and type?", ansawer = "Yes" };
+            AuditQuestions question10 = new AuditQuestions { qustionText = "Are the ducts butted together properly to ensure the cable does not snag?", ansawer = "Yes"};
+            AuditQuestions question11 = new AuditQuestions { qustionText = "Has trenchless excavation taken place?", ansawer = "Yes"};
+            AuditQuestions question12 = new AuditQuestions { qustionText = "Is the cable being laid direct without ducting?", ansawer = "Yes" };
+
+
+            //o	Set B – Cable Installation (heading - not question)
+            AuditQuestions question13 = new AuditQuestions { qustionText = "Is a bedding material used before cable installation (this is compulsory for 33kv and above and optional for other cables is there is a risk of damage to the cable during installation)?", ansawer = "Yes" };
+            AuditQuestions question14 = new AuditQuestions { qustionText = "Is the bedding material compacted to 75mm? ", ansawer = "Yes"};
+            AuditQuestions question15 = new AuditQuestions { qustionText = "Is a winch being used for the cable installation?", ansawer = "Yes" };
+            AuditQuestions question16 = new AuditQuestions { qustionText = "Does it have a trained operator?", ansawer = "Yes"};
+            AuditQuestions question17 = new AuditQuestions { qustionText = "Does the winch have a dynamometer to measure the pulling tension?", ansawer = "Yes"};
+            AuditQuestions question18 = new AuditQuestions { qustionText = "Is the dynamometer adjustable to ensure correct pulling tension?", ansawer = "Yes" };
+            AuditQuestions question19 = new AuditQuestions { qustionText = "Is there a calibration certificate available for the dynamometer?", ansawer = "Yes"  };
+            AuditQuestions question20 = new AuditQuestions { qustionText = "Does the winch have a safety cutout to prevent over pulling of the cable?", ansawer = "Yes" };
+            AuditQuestions question21 = new AuditQuestions { qustionText = "Are the maximum cable pulling tensions available on site & have they been used as a reference?", ansawer = "Yes" };
+            AuditQuestions question22 = new AuditQuestions { qustionText = "Is the cable drum securely supported and can it turn freely?", ansawer = "Yes"};
+            AuditQuestions question23 = new AuditQuestions { qustionText = "Is there a cable pulling manual available on site and is it being used?", ansawer = "Yes" };
+            AuditQuestions question24 = new AuditQuestions { qustionText = "Are rollers being used along the route of the cable pull?", ansawer = "Yes"};
+            AuditQuestions question25 = new AuditQuestions { qustionText = "Are the rollers mechanically sound and rotate freely so as not to snag on the cable?", ansawer = "Yes" };
+            AuditQuestions question26 = new AuditQuestions { qustionText = "Is there a roller present at the start of the pull to guide the cable into the trench?", ansawer = "Yes" };
+            AuditQuestions question27 = new AuditQuestions { qustionText = "Is the nose of the cable protected with a heat shrink cap?", ansawer = "Yes" };
+            AuditQuestions question28 = new AuditQuestions { qustionText = "Is the cable stocking free of defects?", ansawer = "Yes" };
+            AuditQuestions question29 = new AuditQuestions { qustionText = "Is the stocking tied securely to the end of the cable?", ansawer = "Yes" };
+            AuditQuestions question30 = new AuditQuestions { qustionText = "Is a swivel being used between the stocking and winch bond and nothing protruding from the swivel that may catch and deform a duct?", ansawer = "Yes" };
+            AuditQuestions question31 = new AuditQuestions { qustionText = "Are there at least 2 2-way radios on site to aid communication throughout the Pull? ", ansawer = "Yes" };
+            AuditQuestions question32 = new AuditQuestions { qustionText = "Is cable lubricant available on site to aid pulling through ducts and is it being used?", ansawer = "Yes" };
+            AuditQuestions question33 = new AuditQuestions { qustionText = "Has the cable been positioned in the centre of the trench to enable even blinding?", ansawer = "Yes" };
+            AuditQuestions question34 = new AuditQuestions { qustionText = "Has the cable been damaged in any way along the route and has this been checked before blinding the cable?", ansawer = "Yes" };
+            AuditQuestions question35 = new AuditQuestions { qustionText = "What blinding material is available to use (20kv and below, imported sand can be used if excavated material is not suitable)?", ansawer = "Yes" };
+            AuditQuestions question36 = new AuditQuestions { qustionText = "Is the blinding compacted to a depth of 100mm above the cable/joint?", ansawer = "Yes" };
+            AuditQuestions question37 = new AuditQuestions { qustionText = "Is the marker tape laid directly over the cable, not just in the trench? ", ansawer = "Yes" };
+            AuditQuestions question38 = new AuditQuestions { qustionText = "Stokboards are to be used on 33,66,132kv?", ansawer = "Yes" };
+            AuditQuestions question39 = new AuditQuestions { qustionText = "If stokboards are used, have they been pinned together?", ansawer = "Yes" };            
 
             healthSafety.auditQuestionsLst.Add(question1);
             healthSafety.auditQuestionsLst.Add(question2);
@@ -83,7 +96,16 @@ namespace iDMS.Controllers.Audit
             healthSafety.auditQuestionsLst.Add(question27);
             healthSafety.auditQuestionsLst.Add(question28);
             healthSafety.auditQuestionsLst.Add(question29);
-
+            healthSafety.auditQuestionsLst.Add(question30);
+            healthSafety.auditQuestionsLst.Add(question31);
+            healthSafety.auditQuestionsLst.Add(question32);
+            healthSafety.auditQuestionsLst.Add(question33);
+            healthSafety.auditQuestionsLst.Add(question34);
+            healthSafety.auditQuestionsLst.Add(question35);
+            healthSafety.auditQuestionsLst.Add(question36);
+            healthSafety.auditQuestionsLst.Add(question37);
+            healthSafety.auditQuestionsLst.Add(question38);
+            healthSafety.auditQuestionsLst.Add(question39);
 
             return View("~/Views/Audit/HealthSafetyAudit/HealthSafety.cshtml", healthSafety);
         }
