@@ -32,26 +32,5 @@ namespace iDMS.Models.Audit.GasTechnicalAudit
         public string remedialActionTaken { get; set; }
         public DateTime replyDate { get; set; }
 
-
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
     }
 }

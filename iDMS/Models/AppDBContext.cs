@@ -21,10 +21,10 @@ namespace iDMS.Models
         }
         public DbSet<HealthSafety> HealthSafetyAudit { get; set; }
         public DbSet<EnvironmentalSite> EnvironmentalSiteAudit { get; set; }
-        //public DbSet<ElectricalCableCivil> ElectricalCableCivilAudit { get; set; }
-        //public DbSet<ElectricalDistribution> ElectricalDistributionAudit { get; set; }
-        //public DbSet<ElectricalJointing> ElectricalJointingAudit { get; set; }
-        //public DbSet<ElectricalCableTechnical> ElectricalCableTechnicalAudit { get; set; }
-        //public DbSet<GasTechnical> GasTechnicalAudit { get; set; }
+        public DbSet<ElectricalCableCivil> ElectricalCableCivilAudit { get; set; }
+        public DbSet<ElectricalDistribution> ElectricalDistributionAudit { get; set; }
+        public DbSet<ElectricalJointing> ElectricalJointingAudit { get; set; }
+        public DbSet<ElectricalCableTechnical> ElectricalCableTechnicalAudit { get; set; }
+        public DbSet<GasTechnical> GasTechnicalAudit { get; set; }
     }
 }

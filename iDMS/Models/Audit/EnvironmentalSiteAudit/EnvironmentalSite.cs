@@ -28,12 +28,13 @@ namespace iDMS.Models.Audit.EnvironmentalSiteAudit
         //public string LocationOfWork { get; set; }
         //public string LocationOfWork { get; set; }
         [DisplayName("Audit Questions")]
-        public List<AuditQuestions> auditQuestionsVehiclesLst { get; set; }
-        public List<AuditQuestions> auditQuestionsPlantLst { get; set; }
-        public List<AuditQuestions> auditQuestionsHouseKeeepingLst { get; set; }
-        public List<AuditQuestions> auditQuestionsCOSHHLst { get; set; }
-        public List<AuditQuestions> auditQuestionsSpoilLst { get; set; }
-        public List<AuditQuestions> auditQuestionsOthersLst { get; set; }
+        public List<AuditQuestions> auditQuestionsLst { get; set; }
+        //public List<AuditQuestions> auditQuestionsVehiclesLst { get; set; }
+        //public List<AuditQuestions> auditQuestionsPlantLst { get; set; }
+        //public List<AuditQuestions> auditQuestionsHouseKeeepingLst { get; set; }
+        //public List<AuditQuestions> auditQuestionsCOSHHLst { get; set; }
+        //public List<AuditQuestions> auditQuestionsSpoilLst { get; set; }
+        //public List<AuditQuestions> auditQuestionsOthersLst { get; set; }
 
 
         [DisplayName("Additional comments")]

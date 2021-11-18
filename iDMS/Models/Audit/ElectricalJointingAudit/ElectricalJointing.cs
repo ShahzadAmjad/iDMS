@@ -35,46 +35,6 @@ namespace iDMS.Models.Audit.ElectricalJointingAudit
 
 
 
-        ////Audit Questions //Documents  
-        //public List<AuditQuestions> auditQuestionsDocumentsLst { get; set; }
-        ////Audit Questions //Cable Jointing Work   
-        //public List<AuditQuestions> auditQuestionsCableJointingLst { get; set; }
-        //public string specify { get; set; }
-        ////all ‘Specify’ 
 
-        ////Audit Questions //Cable Jointing Work   
-        //public List<AuditQuestions> auditQuestionsTestingLst { get; set; }
-        ////Audit Questions //Cable Jointing Work  
-        //public List<AuditQuestions> auditQuestionsWorkPlaceLst { get; set; }
-        ////Audit Questions //Equipment Positioning
-        //public List<AuditQuestions> auditQuestionsEquipmentPositioningLst { get; set; }
-        ////Audit Questions //o	Work Practices  
-        //public List<AuditQuestions> auditQuestionsWorkPracticesLst { get; set; }
-
-
-
-        //public string defectFound { get; set; }
-        //public string remedialActionTaken { get; set; }
-
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
     }
 }

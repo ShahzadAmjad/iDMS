@@ -26,19 +26,20 @@ namespace iDMS.Models.Audit.ElectricalDistributionAudit
         public string siteAddress { get; set; }
 
         //Audit Questions
-        public List<AuditQuestions> auditQuestionsDocumentsLst { get; set; }
-        public List<AuditQuestions> auditQuestionsSubstationWorkLst { get; set; }
-        public List<AuditQuestions> auditQuestionsSubstationMaintenanceLst { get; set; }
+        public List<AuditQuestions> auditQuestionsLst { get; set; }
+        //public List<AuditQuestions> auditQuestionsDocumentsLst { get; set; }
+        //public List<AuditQuestions> auditQuestionsSubstationWorkLst { get; set; }
+        //public List<AuditQuestions> auditQuestionsSubstationMaintenanceLst { get; set; }
         //Also include a testing date field
         //NOTE: These also include a ‘testing date’ field:
-        public List<AuditQuestions> auditQuestionsToolsEquipmentLst { get; set; }
+        //public List<AuditQuestions> auditQuestionsToolsEquipmentLst { get; set; }
         public DateTime testingDate { get; set; }
 
         //small tools
 
-        public List<AuditQuestions> auditQuestionsSmallToolsLst { get; set; }
+        //public List<AuditQuestions> auditQuestionsSmallToolsLst { get; set; }
 
-        public List<AuditQuestions> auditQuestionsPPELst { get; set; }
+        //public List<AuditQuestions> auditQuestionsPPELst { get; set; }
         
         public string nonConformance { get; set; }
         public string LocationOfWork { get; set; }
