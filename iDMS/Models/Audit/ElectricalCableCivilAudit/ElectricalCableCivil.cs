@@ -69,8 +69,8 @@ namespace iDMS.Models.Audit.ElectricalCableCivilAudit
         public string nonConformance  { get; set; }
         [DisplayName("Owner")]   
         public string owner { get; set; }        
-        [DisplayName("Target date (date)")]
-        public string targetDate { get; set; }
+        [DisplayName("Target date ")]
+        public DateTime targetDate { get; set; }
         [DisplayName("Closed (details)")]
         public string closed { get; set; }
         [DisplayName("Date (data)")]

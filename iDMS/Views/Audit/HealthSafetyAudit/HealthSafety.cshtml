@@ -28,24 +28,14 @@
 
                         @*<form id="BusniessDetailsForm" data-parsley-validate class="form-horizontal form-label-left" asp-controller="HealthSafetyAudit" asp-action="HealthSafetyAudit" method="post">*@
                         {
-
-
-
-
                             <div class="item form-group">
-                                <label asp-for="typeOfWork" class="col-form-label col-md-3 col-sm-3 label-align left">
+                                <label asp-for="locationOfWork" class="col-form-label col-md-3 col-sm-3 label-align left">
 
                                 </label>
                                 <div class="col-md-6 col-sm-6 ">
                                     <input type="text" asp-for="locationOfWork" id="locationOfWork" name="locationOfWork" required="required" class="form-control">
                                 </div>
                             </div>
-
-
-
-
-
-
 
                             <div class="item form-group">
                                 <label asp-for="typeOfWork" class="col-form-label col-md-3 col-sm-3 label-align left">
@@ -88,20 +78,22 @@
                                     <input asp-for="dateTime" id="dateTime" name="dateTime" class="date-picker form-control" placeholder="dd-mm-yyyy">
                                 </div>
                             </div>
-
-
+                            //Audit Questions
+                            <div class="x_title">
+                                <h2>Audit Questions </h2>
+                                <div class="clearfix"></div>
+                            </div>
                             for (int i = 0; i < @Model.auditQuestionsLst.Count(); i++)
                             {
 
                                 <div class="item form-group">
                                     <label class="col-form-label col-md-2 col-sm-2"></label>
                                     <div class="col-md-7 col-sm-7 ">
+                                        @*Hidden text box to get the question text*@
+                                        @Html.TextBoxFor(model => model.auditQuestionsLst[i].qustionText, new { @hidden = "true" })
                                         <h2 class="title">@Html.DisplayFor(m => m.auditQuestionsLst[i].qustionText)</h2>
                                     </div>
                                 </div>
-
-
-
                                 <div class="item form-group">
                                     <label class="col-form-label col-md-2 col-sm-2">
 
@@ -130,14 +122,17 @@
 
                                     </label>
                                     <div class="col-md-7 col-sm-7 ">
-
                                         @Html.TextBoxFor(model => model.auditQuestionsLst[i].comments, new { placeholder = "Comments", @class = "form-control" })
                                     </div>
                                 </div>
                             }
 
 
+                            <div class="x_title">
+                                <h2>Additional Information</h2>
 
+                                <div class="clearfix"></div>
+                            </div>
 
                             <div class="item form-group">
                                 <label asp-for="defectFound" class="col-form-label col-md-3 col-sm-3 label-align">

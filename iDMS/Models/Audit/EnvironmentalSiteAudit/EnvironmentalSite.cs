@@ -25,21 +25,10 @@ namespace iDMS.Models.Audit.EnvironmentalSiteAudit
         public string contractNumber { get; set; }
         [DisplayName("Location")]
         public string location { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
         [DisplayName("Audit Questions")]
         public List<AuditQuestions> auditQuestionsLst { get; set; }
-        //public List<AuditQuestions> auditQuestionsVehiclesLst { get; set; }
-        //public List<AuditQuestions> auditQuestionsPlantLst { get; set; }
-        //public List<AuditQuestions> auditQuestionsHouseKeeepingLst { get; set; }
-        //public List<AuditQuestions> auditQuestionsCOSHHLst { get; set; }
-        //public List<AuditQuestions> auditQuestionsSpoilLst { get; set; }
-        //public List<AuditQuestions> auditQuestionsOthersLst { get; set; }
-
-
         [DisplayName("Additional comments")]
         public string additionalComments { get; set; }
-
         //Environmental Actions and Closures (heading - not question)
         [DisplayName("AuditQuestions")]
         public int Number { get; set; }
@@ -55,27 +44,5 @@ namespace iDMS.Models.Audit.EnvironmentalSiteAudit
         public int score { get; set; }
         [DisplayName("% score ")]
         public int percentageScore { get; set; }
-
-
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
-        //public string LocationOfWork { get; set; }
     }
 }

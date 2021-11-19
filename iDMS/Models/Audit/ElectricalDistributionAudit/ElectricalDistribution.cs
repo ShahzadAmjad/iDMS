@@ -47,8 +47,8 @@ namespace iDMS.Models.Audit.ElectricalDistributionAudit
         [DisplayName("Owner ")]
         public string owner { get; set; }
 
-        [DisplayName("Target")]
-        public string target { get; set; }
+        [DisplayName("Target Date")]
+        public DateTime targetDate { get; set; }
         [DisplayName("Closed")]
         public string closed { get; set; }
         [DisplayName("Date")]
