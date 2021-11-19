@@ -7,76 +7,6 @@ namespace iDMS.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_AuditQuestions_EnvironmentalSiteAudit_environmentalSiteId1",
-                table: "AuditQuestions");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_AuditQuestions_EnvironmentalSiteAudit_environmentalSiteId2",
-                table: "AuditQuestions");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_AuditQuestions_EnvironmentalSiteAudit_environmentalSiteId3",
-                table: "AuditQuestions");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_AuditQuestions_EnvironmentalSiteAudit_environmentalSiteId4",
-                table: "AuditQuestions");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_AuditQuestions_EnvironmentalSiteAudit_environmentalSiteId5",
-                table: "AuditQuestions");
-
-            migrationBuilder.RenameColumn(
-                name: "environmentalSiteId5",
-                table: "AuditQuestions",
-                newName: "gasTechnicalId");
-
-            migrationBuilder.RenameColumn(
-                name: "environmentalSiteId4",
-                table: "AuditQuestions",
-                newName: "electricalJointingId");
-
-            migrationBuilder.RenameColumn(
-                name: "environmentalSiteId3",
-                table: "AuditQuestions",
-                newName: "electricalDistributionId");
-
-            migrationBuilder.RenameColumn(
-                name: "environmentalSiteId2",
-                table: "AuditQuestions",
-                newName: "electricalCableTechnicalId");
-
-            migrationBuilder.RenameColumn(
-                name: "environmentalSiteId1",
-                table: "AuditQuestions",
-                newName: "electricalCableCivilId");
-
-            migrationBuilder.RenameIndex(
-                name: "IX_AuditQuestions_environmentalSiteId5",
-                table: "AuditQuestions",
-                newName: "IX_AuditQuestions_gasTechnicalId");
-
-            migrationBuilder.RenameIndex(
-                name: "IX_AuditQuestions_environmentalSiteId4",
-                table: "AuditQuestions",
-                newName: "IX_AuditQuestions_electricalJointingId");
-
-            migrationBuilder.RenameIndex(
-                name: "IX_AuditQuestions_environmentalSiteId3",
-                table: "AuditQuestions",
-                newName: "IX_AuditQuestions_electricalDistributionId");
-
-            migrationBuilder.RenameIndex(
-                name: "IX_AuditQuestions_environmentalSiteId2",
-                table: "AuditQuestions",
-                newName: "IX_AuditQuestions_electricalCableTechnicalId");
-
-            migrationBuilder.RenameIndex(
-                name: "IX_AuditQuestions_environmentalSiteId1",
-                table: "AuditQuestions",
-                newName: "IX_AuditQuestions_electricalCableCivilId");
-
             migrationBuilder.CreateTable(
                 name: "ElectricalCableCivilAudit",
                 columns: table => new
@@ -104,7 +34,7 @@ namespace iDMS.Migrations
                     notesAndObservations = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     nonConformance = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     owner = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    targetDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    targetDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     closed = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     signature = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -163,9 +93,8 @@ namespace iDMS.Migrations
                     siteAddress = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     testingDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     nonConformance = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LocationOfWork = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     owner = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    target = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    targetDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     closed = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     signature = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -208,6 +137,33 @@ namespace iDMS.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "EnvironmentalSiteAudit",
+                columns: table => new
+                {
+                    environmentalSiteId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    teamLeader = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    teamOperatives = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    dateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    vehicleReg = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    inspectedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    contractNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    location = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    additionalComments = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Number = table.Column<int>(type: "int", nullable: false),
+                    unsafeActObserved = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    immediateActionTaken = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    signature = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    dateClousedOut = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    score = table.Column<int>(type: "int", nullable: false),
+                    percentageScore = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EnvironmentalSiteAudit", x => x.environmentalSiteId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "GasTechnicalAudit",
                 columns: table => new
                 {
@@ -236,68 +192,131 @@ namespace iDMS.Migrations
                     table.PrimaryKey("PK_GasTechnicalAudit", x => x.gasTechnicalId);
                 });
 
-            migrationBuilder.AddForeignKey(
-                name: "FK_AuditQuestions_ElectricalCableCivilAudit_electricalCableCivilId",
-                table: "AuditQuestions",
-                column: "electricalCableCivilId",
-                principalTable: "ElectricalCableCivilAudit",
-                principalColumn: "electricalCableCivilId",
-                onDelete: ReferentialAction.Restrict);
+            migrationBuilder.CreateTable(
+                name: "HealthSafetyAudit",
+                columns: table => new
+                {
+                    HealthSafetyId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    locationOfWork = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    typeOfWork = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    teamLeader = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    contractor = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    projectNo = table.Column<int>(type: "int", nullable: false),
+                    dateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    defectFound = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    remedialActionTaken = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_HealthSafetyAudit", x => x.HealthSafetyId);
+                });
 
-            migrationBuilder.AddForeignKey(
-                name: "FK_AuditQuestions_ElectricalCableTechnicalAudit_electricalCableTechnicalId",
-                table: "AuditQuestions",
-                column: "electricalCableTechnicalId",
-                principalTable: "ElectricalCableTechnicalAudit",
-                principalColumn: "electricalCableTechnicalId",
-                onDelete: ReferentialAction.Restrict);
+            migrationBuilder.CreateTable(
+                name: "AuditQuestions",
+                columns: table => new
+                {
+                    questionId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    qustionText = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ansawer = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    comments = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    equipmentTestingDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    HealthSafetyId = table.Column<int>(type: "int", nullable: true),
+                    electricalCableCivilId = table.Column<int>(type: "int", nullable: true),
+                    electricalCableTechnicalId = table.Column<int>(type: "int", nullable: true),
+                    electricalDistributionId = table.Column<int>(type: "int", nullable: true),
+                    electricalJointingId = table.Column<int>(type: "int", nullable: true),
+                    environmentalSiteId = table.Column<int>(type: "int", nullable: true),
+                    gasTechnicalId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AuditQuestions", x => x.questionId);
+                    table.ForeignKey(
+                        name: "FK_AuditQuestions_ElectricalCableCivilAudit_electricalCableCivilId",
+                        column: x => x.electricalCableCivilId,
+                        principalTable: "ElectricalCableCivilAudit",
+                        principalColumn: "electricalCableCivilId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_AuditQuestions_ElectricalCableTechnicalAudit_electricalCableTechnicalId",
+                        column: x => x.electricalCableTechnicalId,
+                        principalTable: "ElectricalCableTechnicalAudit",
+                        principalColumn: "electricalCableTechnicalId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_AuditQuestions_ElectricalDistributionAudit_electricalDistributionId",
+                        column: x => x.electricalDistributionId,
+                        principalTable: "ElectricalDistributionAudit",
+                        principalColumn: "electricalDistributionId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_AuditQuestions_ElectricalJointingAudit_electricalJointingId",
+                        column: x => x.electricalJointingId,
+                        principalTable: "ElectricalJointingAudit",
+                        principalColumn: "electricalJointingId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_AuditQuestions_EnvironmentalSiteAudit_environmentalSiteId",
+                        column: x => x.environmentalSiteId,
+                        principalTable: "EnvironmentalSiteAudit",
+                        principalColumn: "environmentalSiteId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_AuditQuestions_GasTechnicalAudit_gasTechnicalId",
+                        column: x => x.gasTechnicalId,
+                        principalTable: "GasTechnicalAudit",
+                        principalColumn: "gasTechnicalId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_AuditQuestions_HealthSafetyAudit_HealthSafetyId",
+                        column: x => x.HealthSafetyId,
+                        principalTable: "HealthSafetyAudit",
+                        principalColumn: "HealthSafetyId",
+                        onDelete: ReferentialAction.Restrict);
+                });
 
-            migrationBuilder.AddForeignKey(
-                name: "FK_AuditQuestions_ElectricalDistributionAudit_electricalDistributionId",
+            migrationBuilder.CreateIndex(
+                name: "IX_AuditQuestions_electricalCableCivilId",
                 table: "AuditQuestions",
-                column: "electricalDistributionId",
-                principalTable: "ElectricalDistributionAudit",
-                principalColumn: "electricalDistributionId",
-                onDelete: ReferentialAction.Restrict);
+                column: "electricalCableCivilId");
 
-            migrationBuilder.AddForeignKey(
-                name: "FK_AuditQuestions_ElectricalJointingAudit_electricalJointingId",
+            migrationBuilder.CreateIndex(
+                name: "IX_AuditQuestions_electricalCableTechnicalId",
                 table: "AuditQuestions",
-                column: "electricalJointingId",
-                principalTable: "ElectricalJointingAudit",
-                principalColumn: "electricalJointingId",
-                onDelete: ReferentialAction.Restrict);
+                column: "electricalCableTechnicalId");
 
-            migrationBuilder.AddForeignKey(
-                name: "FK_AuditQuestions_GasTechnicalAudit_gasTechnicalId",
+            migrationBuilder.CreateIndex(
+                name: "IX_AuditQuestions_electricalDistributionId",
                 table: "AuditQuestions",
-                column: "gasTechnicalId",
-                principalTable: "GasTechnicalAudit",
-                principalColumn: "gasTechnicalId",
-                onDelete: ReferentialAction.Restrict);
+                column: "electricalDistributionId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AuditQuestions_electricalJointingId",
+                table: "AuditQuestions",
+                column: "electricalJointingId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AuditQuestions_environmentalSiteId",
+                table: "AuditQuestions",
+                column: "environmentalSiteId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AuditQuestions_gasTechnicalId",
+                table: "AuditQuestions",
+                column: "gasTechnicalId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AuditQuestions_HealthSafetyId",
+                table: "AuditQuestions",
+                column: "HealthSafetyId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_AuditQuestions_ElectricalCableCivilAudit_electricalCableCivilId",
-                table: "AuditQuestions");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_AuditQuestions_ElectricalCableTechnicalAudit_electricalCableTechnicalId",
-                table: "AuditQuestions");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_AuditQuestions_ElectricalDistributionAudit_electricalDistributionId",
-                table: "AuditQuestions");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_AuditQuestions_ElectricalJointingAudit_electricalJointingId",
-                table: "AuditQuestions");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_AuditQuestions_GasTechnicalAudit_gasTechnicalId",
-                table: "AuditQuestions");
+            migrationBuilder.DropTable(
+                name: "AuditQuestions");
 
             migrationBuilder.DropTable(
                 name: "ElectricalCableCivilAudit");
@@ -312,97 +331,13 @@ namespace iDMS.Migrations
                 name: "ElectricalJointingAudit");
 
             migrationBuilder.DropTable(
+                name: "EnvironmentalSiteAudit");
+
+            migrationBuilder.DropTable(
                 name: "GasTechnicalAudit");
 
-            migrationBuilder.RenameColumn(
-                name: "gasTechnicalId",
-                table: "AuditQuestions",
-                newName: "environmentalSiteId5");
-
-            migrationBuilder.RenameColumn(
-                name: "electricalJointingId",
-                table: "AuditQuestions",
-                newName: "environmentalSiteId4");
-
-            migrationBuilder.RenameColumn(
-                name: "electricalDistributionId",
-                table: "AuditQuestions",
-                newName: "environmentalSiteId3");
-
-            migrationBuilder.RenameColumn(
-                name: "electricalCableTechnicalId",
-                table: "AuditQuestions",
-                newName: "environmentalSiteId2");
-
-            migrationBuilder.RenameColumn(
-                name: "electricalCableCivilId",
-                table: "AuditQuestions",
-                newName: "environmentalSiteId1");
-
-            migrationBuilder.RenameIndex(
-                name: "IX_AuditQuestions_gasTechnicalId",
-                table: "AuditQuestions",
-                newName: "IX_AuditQuestions_environmentalSiteId5");
-
-            migrationBuilder.RenameIndex(
-                name: "IX_AuditQuestions_electricalJointingId",
-                table: "AuditQuestions",
-                newName: "IX_AuditQuestions_environmentalSiteId4");
-
-            migrationBuilder.RenameIndex(
-                name: "IX_AuditQuestions_electricalDistributionId",
-                table: "AuditQuestions",
-                newName: "IX_AuditQuestions_environmentalSiteId3");
-
-            migrationBuilder.RenameIndex(
-                name: "IX_AuditQuestions_electricalCableTechnicalId",
-                table: "AuditQuestions",
-                newName: "IX_AuditQuestions_environmentalSiteId2");
-
-            migrationBuilder.RenameIndex(
-                name: "IX_AuditQuestions_electricalCableCivilId",
-                table: "AuditQuestions",
-                newName: "IX_AuditQuestions_environmentalSiteId1");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_AuditQuestions_EnvironmentalSiteAudit_environmentalSiteId1",
-                table: "AuditQuestions",
-                column: "environmentalSiteId1",
-                principalTable: "EnvironmentalSiteAudit",
-                principalColumn: "environmentalSiteId",
-                onDelete: ReferentialAction.Restrict);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_AuditQuestions_EnvironmentalSiteAudit_environmentalSiteId2",
-                table: "AuditQuestions",
-                column: "environmentalSiteId2",
-                principalTable: "EnvironmentalSiteAudit",
-                principalColumn: "environmentalSiteId",
-                onDelete: ReferentialAction.Restrict);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_AuditQuestions_EnvironmentalSiteAudit_environmentalSiteId3",
-                table: "AuditQuestions",
-                column: "environmentalSiteId3",
-                principalTable: "EnvironmentalSiteAudit",
-                principalColumn: "environmentalSiteId",
-                onDelete: ReferentialAction.Restrict);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_AuditQuestions_EnvironmentalSiteAudit_environmentalSiteId4",
-                table: "AuditQuestions",
-                column: "environmentalSiteId4",
-                principalTable: "EnvironmentalSiteAudit",
-                principalColumn: "environmentalSiteId",
-                onDelete: ReferentialAction.Restrict);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_AuditQuestions_EnvironmentalSiteAudit_environmentalSiteId5",
-                table: "AuditQuestions",
-                column: "environmentalSiteId5",
-                principalTable: "EnvironmentalSiteAudit",
-                principalColumn: "environmentalSiteId",
-                onDelete: ReferentialAction.Restrict);
+            migrationBuilder.DropTable(
+                name: "HealthSafetyAudit");
         }
     }
 }

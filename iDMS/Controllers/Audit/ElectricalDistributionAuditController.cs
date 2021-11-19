@@ -205,7 +205,7 @@ namespace iDMS.Controllers.Audit
         public IActionResult ElectricalDistributionAudit(ElectricalDistribution electricalDistribution)
         {
             _electricalDistributionRepository.Add(electricalDistribution);
-            return View();
+            return View("~/Views/Home/Home.cshtml");
         }
     }
 }

@@ -50,6 +50,9 @@ namespace iDMS.Migrations
                     b.Property<int?>("environmentalSiteId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("equipmentTestingDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<int?>("gasTechnicalId")
                         .HasColumnType("int");
 
@@ -148,8 +151,8 @@ namespace iDMS.Migrations
                     b.Property<string>("siteAddress")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("targetDate")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("targetDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("teamLeader")
                         .HasColumnType("nvarchar(max)");
@@ -232,9 +235,6 @@ namespace iDMS.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("LocationOfWork")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("activity")
                         .HasColumnType("nvarchar(max)");
 
@@ -286,8 +286,8 @@ namespace iDMS.Migrations
                     b.Property<int>("substationNo")
                         .HasColumnType("int");
 
-                    b.Property<string>("target")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("targetDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("teamLeader")
                         .HasColumnType("nvarchar(max)");
