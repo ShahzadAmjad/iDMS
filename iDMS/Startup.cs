@@ -1,5 +1,6 @@
 using iDMS.Models;
 using iDMS.Models.Audit.ElectricalCableCivilAudit;
+using iDMS.Models.Audit.ElectricalDistributionAudit;
 using iDMS.Models.Audit.EnvironmentalSiteAudit;
 using iDMS.Models.Audit.HealthSafetyAudit;
 using Microsoft.AspNetCore.Builder;
@@ -36,6 +37,7 @@ namespace iDMS
             services.AddScoped<IHealthSafetyRepository, SQLHealthSafetyRepository>();
             services.AddScoped<IEnvironmentalSiteRepository, SQLEnvironmentalSiteRepository>();
             services.AddScoped<IElectricalCableCivilRepository, SQLElectricalCableCivilRepository>();
+            services.AddScoped<IElectricalDistributionRepository, SQLElectricalDistributionRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

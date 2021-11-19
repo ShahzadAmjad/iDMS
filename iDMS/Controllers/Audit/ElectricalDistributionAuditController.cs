@@ -10,9 +10,10 @@ namespace iDMS.Controllers.Audit
 {
     public class ElectricalDistributionAuditController : Controller
     {
-        public ElectricalDistributionAuditController()
+        private IElectricalDistributionRepository _electricalDistributionRepository;
+        public ElectricalDistributionAuditController(IElectricalDistributionRepository electricalDistributionRepository)
         {
-                
+            _electricalDistributionRepository = electricalDistributionRepository;
         }
         public IActionResult Index()
         {
@@ -203,7 +204,7 @@ namespace iDMS.Controllers.Audit
         [HttpPost]
         public IActionResult ElectricalDistributionAudit(ElectricalDistribution electricalDistribution)
         {
-            //_electricalDistributionRepository.Add(electricalDistribution);
+            _electricalDistributionRepository.Add(electricalDistribution);
             return View();
         }
     }

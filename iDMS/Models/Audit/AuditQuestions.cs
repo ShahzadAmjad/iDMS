@@ -13,5 +13,7 @@ namespace iDMS.Models.Audit
         public string qustionText { get; set; }
         public string ansawer { get; set; }
         public string comments { get; set; }
+        //for ElectricalDistributionAudit Questions Tools / Equipment 
+        public DateTime equipmentTestingDate { get; set; }
     }
 }
