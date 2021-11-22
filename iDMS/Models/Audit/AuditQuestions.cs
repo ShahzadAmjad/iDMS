@@ -15,5 +15,9 @@ namespace iDMS.Models.Audit
         public string comments { get; set; }
         //for ElectricalDistributionAudit Questions Tools / Equipment 
         public DateTime equipmentTestingDate { get; set; }
+
+        public string specify { get; set; }
+
+        public string condition { get; set; }
     }
 }
