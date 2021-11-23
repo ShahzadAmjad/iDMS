@@ -19,5 +19,8 @@ namespace iDMS.Models.Audit
         public string specify { get; set; }
 
         public string condition { get; set; }
+
+        public DateTime expiryDate { get; set; }
+        public string cardNumber { get; set; }
     }
 }

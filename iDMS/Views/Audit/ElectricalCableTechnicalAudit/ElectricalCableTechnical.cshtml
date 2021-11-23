@@ -110,12 +110,13 @@
                                     <input asp-for="dateTime" id="dateTime" name="dateTime" class="date-picker form-control" placeholder="dd-mm-yyyy">
                                 </div>
                             </div>
-                            //Audit Questions
+
+                            //Audit Questions Documents
                             <div class="x_title">
-                                <h2>Audit Questions </h2>
+                                <h2>Audit Questions Documents </h2>
                                 <div class="clearfix"></div>
                             </div>
-                            for (int i = 0; i < @Model.auditQuestionsLst.Count(); i++)
+                            for (int i = 0; i < 6; i++)
                             {
 
                                 <div class="item form-group">
@@ -132,13 +133,13 @@
                                     </label>
                                     <div class="col-md-7 col-sm-7 ">
                                         <div class="form-check form-check-inline">
-                                            @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "Yes")
-                                            <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                            @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "Satisfactory ")
+                                            <label class="form-check-label" for="inlineRadio1">Satisfactory</label>
                                         </div>
                                         <br />
                                         <div class="form-check form-check-inline">
-                                            @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "No")
-                                            <label class="form-check-label" for="inlineRadio1">No</label>
+                                            @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "Not Satisfactory")
+                                            <label class="form-check-label" for="inlineRadio1">Not Satisfactory</label>
                                         </div>
                                         <br />
 
@@ -150,9 +151,438 @@
 
                                 </div>
                                 <div class="item form-group">
+                                    <label class="col-form-label col-md-2 col-sm-2"></label>
+                                    <div class="col-md-7 col-sm-7 ">
+                                        @Html.TextBoxFor(model => model.auditQuestionsLst[i].comments, new { placeholder = "Comments", @class = "form-control" })
+                                    </div>
+                                </div>
+                            }
+
+
+                            //Audit Questions Excavation
+                            <div class="x_title">
+                                <h2>Audit Questions Excavation  </h2>
+                                <div class="clearfix"></div>
+                            </div>
+                            for (int i = 6; i < 10; i++)
+                            {
+
+                                <div class="item form-group">
+                                    <label class="col-form-label col-md-2 col-sm-2"></label>
+                                    <div class="col-md-7 col-sm-7 ">
+                                        @*Hidden text box to get the question text*@
+                                        @Html.TextBoxFor(model => model.auditQuestionsLst[i].qustionText, new { @hidden = "true" })
+                                        <h2 class="title">@Html.DisplayFor(m => m.auditQuestionsLst[i].qustionText)</h2>
+                                    </div>
+                                </div>
+                                <div class="item form-group">
                                     <label class="col-form-label col-md-2 col-sm-2">
 
                                     </label>
+                                    <div class="col-md-7 col-sm-7 ">
+                                        <div class="form-check form-check-inline">
+                                            @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "Satisfactory")
+                                            <label class="form-check-label" for="inlineRadio1">Satisfactory</label>
+                                        </div>
+                                        <br />
+                                        <div class="form-check form-check-inline">
+                                            @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "Not Satisfactory")
+                                            <label class="form-check-label" for="inlineRadio1">Not Satisfactory</label>
+                                        </div>
+                                        <br />
+
+                                        <div class="form-check form-check-inline">
+                                            @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "NA")
+                                            <label class="form-check-label" for="inlineRadio1">NA</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="item form-group">
+                                    <label class="col-form-label col-md-2 col-sm-2"></label>
+                                    <div class="col-md-7 col-sm-7 ">
+                                        @Html.TextBoxFor(model => model.auditQuestionsLst[i].comments, new { placeholder = "Comments", @class = "form-control" })
+                                    </div>
+                                </div>
+                            }
+
+
+                            //Audit Questions 3 Mains Cable
+                            <div class="x_title">
+                                <h2>Audit Questions 3 Mains Cable </h2>
+                                <div class="clearfix"></div>
+                            </div>
+                            for (int i = 10; i < 17; i++)
+                            {
+
+                                <div class="item form-group">
+                                    <label class="col-form-label col-md-2 col-sm-2"></label>
+                                    <div class="col-md-7 col-sm-7 ">
+                                        @*Hidden text box to get the question text*@
+                                        @Html.TextBoxFor(model => model.auditQuestionsLst[i].qustionText, new { @hidden = "true" })
+                                        <h2 class="title">@Html.DisplayFor(m => m.auditQuestionsLst[i].qustionText)</h2>
+                                    </div>
+                                </div>
+                                <div class="item form-group">
+                                    <label class="col-form-label col-md-2 col-sm-2">
+
+                                    </label>
+                                    <div class="col-md-7 col-sm-7 ">
+                                        <div class="form-check form-check-inline">
+                                            @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "Satisfactory")
+                                            <label class="form-check-label" for="inlineRadio1">Satisfactory</label>
+                                        </div>
+                                        <br />
+                                        <div class="form-check form-check-inline">
+                                            @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "Not Satisfactory")
+                                            <label class="form-check-label" for="inlineRadio1">Not Satisfactory</label>
+                                        </div>
+                                        <br />
+
+                                        <div class="form-check form-check-inline">
+                                            @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "NA")
+                                            <label class="form-check-label" for="inlineRadio1">NA</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="item form-group">
+                                    <label class="col-form-label col-md-2 col-sm-2"></label>
+                                    <div class="col-md-7 col-sm-7 ">
+                                        @Html.TextBoxFor(model => model.auditQuestionsLst[i].comments, new { placeholder = "Comments", @class = "form-control" })
+                                    </div>
+                                </div>
+                                if (Model.auditQuestionsLst[i].qustionText != "Method Statement")
+                                {
+                                    <div class="item form-group">
+                                        <label class="col-form-label col-md-2 col-sm-2"></label>
+                                        <div class="col-md-7 col-sm-7 ">
+                                            @Html.TextBoxFor(model => model.auditQuestionsLst[i].specify, new { placeholder = "Specify", @class = "form-control" })
+                                        </div>
+                                    </div>
+                                }
+                            }
+
+
+                            //Audit Questions Jointing
+                            <div class="x_title">
+                                <h2>Audit Questions Jointing</h2>
+                                <div class="clearfix"></div>
+                            </div>
+                            for (int i = 17; i < 26; i++)
+                            {
+
+                                <div class="item form-group">
+                                    <label class="col-form-label col-md-2 col-sm-2"></label>
+                                    <div class="col-md-7 col-sm-7 ">
+                                        @*Hidden text box to get the question text*@
+                                        @Html.TextBoxFor(model => model.auditQuestionsLst[i].qustionText, new { @hidden = "true" })
+                                        <h2 class="title">@Html.DisplayFor(m => m.auditQuestionsLst[i].qustionText)</h2>
+                                    </div>
+                                </div>
+                                <div class="item form-group">
+                                    <label class="col-form-label col-md-2 col-sm-2">
+
+                                    </label>
+                                    <div class="col-md-7 col-sm-7 ">
+                                        <div class="form-check form-check-inline">
+                                            @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "Satisfactory")
+                                            <label class="form-check-label" for="inlineRadio1">Satisfactory</label>
+                                        </div>
+                                        <br />
+                                        <div class="form-check form-check-inline">
+                                            @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "Not Satisfactory")
+                                            <label class="form-check-label" for="inlineRadio1">Not Satisfactory</label>
+                                        </div>
+                                        <br />
+
+                                        <div class="form-check form-check-inline">
+                                            @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "NA")
+                                            <label class="form-check-label" for="inlineRadio1">NA</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="item form-group">
+                                    <label class="col-form-label col-md-2 col-sm-2"></label>
+                                    <div class="col-md-7 col-sm-7 ">
+                                        @Html.TextBoxFor(model => model.auditQuestionsLst[i].comments, new { placeholder = "Comments", @class = "form-control" })
+                                    </div>
+                                </div>
+                                if (Model.auditQuestionsLst[i].qustionText != "Method Statement")
+                                {
+                                    <div class="item form-group">
+                                        <label class="col-form-label col-md-2 col-sm-2"></label>
+                                        <div class="col-md-7 col-sm-7 ">
+                                            @Html.TextBoxFor(model => model.auditQuestionsLst[i].specify, new { placeholder = "Specify", @class = "form-control" })
+                                        </div>
+                                    </div>
+                                }
+
+                            }
+
+
+                            //Audit Questions Service Cable
+                            <div class="x_title">
+                                <h2>Audit Questions	Service Cable</h2>
+                                <div class="clearfix"></div>
+                            </div>
+                            for (int i = 26; i < 37; i++)
+                            {
+
+                                <div class="item form-group">
+                                    <label class="col-form-label col-md-2 col-sm-2"></label>
+                                    <div class="col-md-7 col-sm-7 ">
+                                        @*Hidden text box to get the question text*@
+                                        @Html.TextBoxFor(model => model.auditQuestionsLst[i].qustionText, new { @hidden = "true" })
+                                        <h2 class="title">@Html.DisplayFor(m => m.auditQuestionsLst[i].qustionText)</h2>
+                                    </div>
+                                </div>
+                                <div class="item form-group">
+                                    <label class="col-form-label col-md-2 col-sm-2">
+
+                                    </label>
+                                    <div class="col-md-7 col-sm-7 ">
+                                        <div class="form-check form-check-inline">
+                                            @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "Satisfactory")
+                                            <label class="form-check-label" for="inlineRadio1">Satisfactory</label>
+                                        </div>
+                                        <br />
+                                        <div class="form-check form-check-inline">
+                                            @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "Not Satisfactory")
+                                            <label class="form-check-label" for="inlineRadio1">Not Satisfactory</label>
+                                        </div>
+                                        <br />
+
+                                        <div class="form-check form-check-inline">
+                                            @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "NA")
+                                            <label class="form-check-label" for="inlineRadio1">NA</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="item form-group">
+                                    <label class="col-form-label col-md-2 col-sm-2"></label>
+                                    <div class="col-md-7 col-sm-7 ">
+                                        @Html.TextBoxFor(model => model.auditQuestionsLst[i].comments, new { placeholder = "Comments", @class = "form-control" })
+                                    </div>
+                                </div>
+                                if (Model.auditQuestionsLst[i].qustionText != "Method Statement")
+                                {
+                                    <div class="item form-group">
+                                        <label class="col-form-label col-md-2 col-sm-2"></label>
+                                        <div class="col-md-7 col-sm-7 ">
+                                            @Html.TextBoxFor(model => model.auditQuestionsLst[i].specify, new { placeholder = "Specify", @class = "form-control" })
+                                        </div>
+                                    </div>
+                                }
+
+                            }
+
+
+                            //Audit Questions Tools & Equipment
+                            <div class="x_title">
+                                <h2>Audit Questions	Tools & Equipment </h2>
+                                <div class="clearfix"></div>
+                            </div>
+                            for (int i = 37; i < 50; i++)
+                            {
+
+                                <div class="item form-group">
+                                    <label class="col-form-label col-md-2 col-sm-2"></label>
+                                    <div class="col-md-7 col-sm-7 ">
+                                        @*Hidden text box to get the question text*@
+                                        @Html.TextBoxFor(model => model.auditQuestionsLst[i].qustionText, new { @hidden = "true" })
+                                        <h2 class="title">@Html.DisplayFor(m => m.auditQuestionsLst[i].qustionText)</h2>
+                                    </div>
+                                </div>
+                                <div class="item form-group">
+                                    <label class="col-form-label col-md-2 col-sm-2">
+
+                                    </label>
+                                    <div class="col-md-7 col-sm-7 ">
+                                        <div class="form-check form-check-inline">
+                                            @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "Satisfactory")
+                                            <label class="form-check-label" for="inlineRadio1">Satisfactory</label>
+                                        </div>
+                                        <br />
+                                        <div class="form-check form-check-inline">
+                                            @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "Not Satisfactory")
+                                            <label class="form-check-label" for="inlineRadio1">Not Satisfactory</label>
+                                        </div>
+                                        <br />
+
+                                        <div class="form-check form-check-inline">
+                                            @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "NA")
+                                            <label class="form-check-label" for="inlineRadio1">NA</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="item form-group">
+                                    <label class="col-form-label col-md-2 col-sm-2"></label>
+                                    <div class="col-md-7 col-sm-7 ">
+                                        @Html.TextBoxFor(model => model.auditQuestionsLst[i].comments, new { placeholder = "Comments", @class = "form-control" })
+                                    </div>
+                                </div>
+                                if (Model.auditQuestionsLst[i].qustionText != "Method Statement")
+                                {
+                                    <div class="item form-group">
+                                        <label class="col-form-label col-md-2 col-sm-2"></label>
+                                        <div class="col-md-7 col-sm-7 ">
+                                            @Html.TextBoxFor(model => model.auditQuestionsLst[i].specify, new { placeholder = "Specify", @class = "form-control" })
+                                        </div>
+                                    </div>
+                                }
+
+                            }
+
+
+                            //Audit Questions Accreditation
+                            <div class="x_title">
+                                <h2>Audit Questions	Accreditation</h2>
+                                <div class="clearfix"></div>
+                            </div>
+                            for (int i = 50; i < 52; i++)
+                            {
+
+                                <div class="item form-group">
+                                    <label class="col-form-label col-md-2 col-sm-2"></label>
+                                    <div class="col-md-7 col-sm-7 ">
+                                        @*Hidden text box to get the question text*@
+                                        @Html.TextBoxFor(model => model.auditQuestionsLst[i].qustionText, new { @hidden = "true" })
+                                        <h2 class="title">@Html.DisplayFor(m => m.auditQuestionsLst[i].qustionText)</h2>
+                                    </div>
+                                </div>
+                                <div class="item form-group">
+                                    <label class="col-form-label col-md-2 col-sm-2">
+
+                                    </label>
+                                    <div class="col-md-7 col-sm-7 ">
+                                        <div class="form-check form-check-inline">
+                                            @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "Satisfactory")
+                                            <label class="form-check-label" for="inlineRadio1">Satisfactory</label>
+                                        </div>
+                                        <br />
+                                        <div class="form-check form-check-inline">
+                                            @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "Not Satisfactory")
+                                            <label class="form-check-label" for="inlineRadio1">Not Satisfactory</label>
+                                        </div>
+                                        <br />
+
+                                        <div class="form-check form-check-inline">
+                                            @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "NA")
+                                            <label class="form-check-label" for="inlineRadio1">NA</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="item form-group">
+                                    <label class="col-form-label col-md-2 col-sm-2">Expiry Date</label>
+                                    <div class="col-md-7 col-sm-7 ">
+                                        @Html.TextBoxFor(model => model.auditQuestionsLst[i].expiryDate, new { placeholder = "Specify", @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="item form-group">
+                                    <label class="col-form-label col-md-2 col-sm-2"></label>
+                                    <div class="col-md-7 col-sm-7 ">
+                                        @Html.TextBoxFor(model => model.auditQuestionsLst[i].cardNumber, new { placeholder = "Card No", @class = "form-control" })
+                                    </div>
+                                </div>
+
+                            }
+
+
+                            //Audit Questions Testing
+                            <div class="x_title">
+                                <h2>Audit Questions Testing  </h2>
+                                <div class="clearfix"></div>
+                            </div>
+                            for (int i = 52; i < 57; i++)
+                            {
+
+                                <div class="item form-group">
+                                    <label class="col-form-label col-md-2 col-sm-2"></label>
+                                    <div class="col-md-7 col-sm-7 ">
+                                        @*Hidden text box to get the question text*@
+                                        @Html.TextBoxFor(model => model.auditQuestionsLst[i].qustionText, new { @hidden = "true" })
+                                        <h2 class="title">@Html.DisplayFor(m => m.auditQuestionsLst[i].qustionText)</h2>
+                                    </div>
+                                </div>
+                                <div class="item form-group">
+                                    <label class="col-form-label col-md-2 col-sm-2">
+
+                                    </label>
+                                    <div class="col-md-7 col-sm-7 ">
+                                        <div class="form-check form-check-inline">
+                                            @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "Satisfactory")
+                                            <label class="form-check-label" for="inlineRadio1">Satisfactory</label>
+                                        </div>
+                                        <br />
+                                        <div class="form-check form-check-inline">
+                                            @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "Not Satisfactory")
+                                            <label class="form-check-label" for="inlineRadio1">Not Satisfactory</label>
+                                        </div>
+                                        <br />
+
+                                        <div class="form-check form-check-inline">
+                                            @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "NA")
+                                            <label class="form-check-label" for="inlineRadio1">NA</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="item form-group">
+                                    <label class="col-form-label col-md-2 col-sm-2"></label>
+                                    <div class="col-md-7 col-sm-7 ">
+                                        @Html.TextBoxFor(model => model.auditQuestionsLst[i].comments, new { placeholder = "Comments", @class = "form-control" })
+                                    </div>
+                                </div>
+                            }
+
+
+                            //Audit Questions PPE
+                            <div class="x_title">
+                                <h2>Audit Questions PPE  </h2>
+                                <div class="clearfix"></div>
+                            </div>
+                            for (int i = 57; i < 64; i++)
+                            {
+
+                                <div class="item form-group">
+                                    <label class="col-form-label col-md-2 col-sm-2"></label>
+                                    <div class="col-md-7 col-sm-7 ">
+                                        @*Hidden text box to get the question text*@
+                                        @Html.TextBoxFor(model => model.auditQuestionsLst[i].qustionText, new { @hidden = "true" })
+                                        <h2 class="title">@Html.DisplayFor(m => m.auditQuestionsLst[i].qustionText)</h2>
+                                    </div>
+                                </div>
+                                <div class="item form-group">
+                                    <label class="col-form-label col-md-2 col-sm-2">
+
+                                    </label>
+                                    <div class="col-md-7 col-sm-7 ">
+                                        <div class="form-check form-check-inline">
+                                            @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "Satisfactory")
+                                            <label class="form-check-label" for="inlineRadio1">Satisfactory</label>
+                                        </div>
+                                        <br />
+                                        <div class="form-check form-check-inline">
+                                            @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "Not Satisfactory")
+                                            <label class="form-check-label" for="inlineRadio1">Not Satisfactory</label>
+                                        </div>
+                                        <br />
+
+                                        <div class="form-check form-check-inline">
+                                            @Html.RadioButtonFor(x => x.auditQuestionsLst[i].ansawer, "NA")
+                                            <label class="form-check-label" for="inlineRadio1">NA</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="item form-group">
+                                    <label class="col-form-label col-md-2 col-sm-2"></label>
                                     <div class="col-md-7 col-sm-7 ">
                                         @Html.TextBoxFor(model => model.auditQuestionsLst[i].comments, new { placeholder = "Comments", @class = "form-control" })
                                     </div>
@@ -185,7 +615,7 @@
 
                                 </label>
                                 <div class="col-md-6 col-sm-6 ">
-                                    <input asp-for="date" id="date" name="date"  class="form-control" type="date">
+                                    <input asp-for="date" id="date" name="date" class="form-control" type="date">
                                 </div>
                             </div>
                             <div class="item form-group">
