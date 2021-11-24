@@ -92,7 +92,7 @@ namespace iDMS.Controllers.Audit
         public IActionResult HealthSafetyAudit(HealthSafety healthSafety)
         {
             _healthSafetyRepository.Add(healthSafety);
-            return View();
+            return View("~/Views/Home/Home.cshtml");
         }
     }
 }

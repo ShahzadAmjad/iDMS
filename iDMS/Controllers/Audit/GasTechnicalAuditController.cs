@@ -201,7 +201,7 @@ namespace iDMS.Controllers.Audit
         public IActionResult GasTechnicalAudit(GasTechnical gasTechnical)
         {
             _GasTechnicalRepository.Add(gasTechnical);
-            return View("~/Views/Audit/GasTechnicalAudit/GasTechnical.cshtml");
+            return View("~/Views/Home/Home.cshtml");
         }
     }
 }

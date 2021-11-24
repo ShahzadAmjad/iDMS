@@ -179,7 +179,7 @@ namespace iDMS.Controllers.Audit
         public IActionResult ElectricalCableTechnicalAudit(ElectricalCableTechnical electricalCableTechnical)
         {
            _electricalCableTechnicalRepository.Add(electricalCableTechnical);
-            return View("~/Views/Audit/ElectricalCableTechnicalAudit/ElectricalCableTechnical.cshtml");
+            return View("~/Views/Home/Home.cshtml");
         }
     }
 }
