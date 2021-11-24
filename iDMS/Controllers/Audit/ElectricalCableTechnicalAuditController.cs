@@ -10,10 +10,10 @@ namespace iDMS.Controllers.Audit
 {
     public class ElectricalCableTechnicalAuditController : Controller
     {
-        //private IElectricalCableTechnicalRepository _electricalCableTechnicalRepository;
-        public ElectricalCableTechnicalAuditController()
+        private IElectricalCableTechnicalRepository _electricalCableTechnicalRepository;
+        public ElectricalCableTechnicalAuditController(IElectricalCableTechnicalRepository electricalCableTechnicalRepository)
         {
-
+            _electricalCableTechnicalRepository = electricalCableTechnicalRepository;
         }
         public IActionResult Index()
         {
@@ -178,7 +178,7 @@ namespace iDMS.Controllers.Audit
         [HttpPost]
         public IActionResult ElectricalCableTechnicalAudit(ElectricalCableTechnical electricalCableTechnical)
         {
-           // _electricalCableTechnicalRepository.Add(electricalCableTechnical);
+           _electricalCableTechnicalRepository.Add(electricalCableTechnical);
             return View("~/Views/Audit/ElectricalCableTechnicalAudit/ElectricalCableTechnical.cshtml");
         }
     }

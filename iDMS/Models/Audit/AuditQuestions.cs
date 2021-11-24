@@ -22,5 +22,9 @@ namespace iDMS.Models.Audit
 
         public DateTime expiryDate { get; set; }
         public string cardNumber { get; set; }
+
+
+        public DateTime startDate { get; set; }
+        public DateTime finishDate { get; set; }
     }
 }

@@ -10,10 +10,10 @@ namespace iDMS.Controllers.Audit
 {
     public class GasTechnicalAuditController : Controller
     {
-        //private IGasTechnicalRepository _GasTechnicalRepository;
-        public GasTechnicalAuditController()
+        private IGasTechnicalRepository _GasTechnicalRepository;
+        public GasTechnicalAuditController(IGasTechnicalRepository gasTechnicalRepository)
         {
-
+            _GasTechnicalRepository = gasTechnicalRepository;
         }
         public IActionResult Index()
         {
@@ -200,7 +200,7 @@ namespace iDMS.Controllers.Audit
         [HttpPost]
         public IActionResult GasTechnicalAudit(GasTechnical gasTechnical)
         {
-            //_GasTechnicalRepository.Add(gasTechnical);
+            _GasTechnicalRepository.Add(gasTechnical);
             return View("~/Views/Audit/GasTechnicalAudit/GasTechnical.cshtml");
         }
     }

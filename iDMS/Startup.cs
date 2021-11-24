@@ -1,8 +1,10 @@
 using iDMS.Models;
 using iDMS.Models.Audit.ElectricalCableCivilAudit;
+using iDMS.Models.Audit.ElectricalCableTechnical;
 using iDMS.Models.Audit.ElectricalDistributionAudit;
 using iDMS.Models.Audit.ElectricalJointingAudit;
 using iDMS.Models.Audit.EnvironmentalSiteAudit;
+using iDMS.Models.Audit.GasTechnicalAudit;
 using iDMS.Models.Audit.HealthSafetyAudit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -40,6 +42,9 @@ namespace iDMS
             services.AddScoped<IElectricalCableCivilRepository, SQLElectricalCableCivilRepository>();
             services.AddScoped<IElectricalDistributionRepository, SQLElectricalDistributionRepository>();
             services.AddScoped<IElectricalJointingRepository, SQLElectricalJointingRepository>();
+
+            services.AddScoped<IElectricalCableTechnicalRepository, SQLElectricalCableTechnicalRepository>();
+            services.AddScoped<IGasTechnicalRepository, SQLGasTechnicalRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

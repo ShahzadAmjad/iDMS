@@ -7,5 +7,6 @@ namespace iDMS.Models.Audit.ElectricalCableTechnical
 {
     public interface IElectricalCableTechnicalRepository
     {
+        ElectricalCableTechnical Add(ElectricalCableTechnical electricalCableTechnical);
     }
 }
