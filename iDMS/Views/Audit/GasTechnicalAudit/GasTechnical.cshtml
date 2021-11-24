@@ -491,7 +491,7 @@
                                         Test Date
                                     </label>
                                     <div class="col-md-7 col-sm-7 ">
-                                        @Html.TextBoxFor(model => model.auditQuestionsLst[i].equipmentTestingDate, new { placeholder = "Test Date", @class = "form-control" })
+                                        @Html.TextBoxFor(model => model.auditQuestionsLst[i].equipmentTestingDate, new { placeholder = "Test Date", @type = "date", @class = "form-control" })
                                     </div>
                                 </div>
                             }
@@ -536,20 +536,13 @@
                                     </div>
 
                                 </div>
-                                <div class="item form-group">
-                                    <label class="col-form-label col-md-2 col-sm-2">
-
-                                    </label>
-                                    <div class="col-md-7 col-sm-7 ">
-                                        @Html.TextBoxFor(model => model.auditQuestionsLst[i].comments, new { placeholder = "Comments", @class = "form-control" })
-                                    </div>
-                                </div>
+                                
                                 <div class="item form-group">
                                     <label class="col-form-label col-md-2 col-sm-2 label-align">
                                         Expiry Date
                                     </label>
                                     <div class="col-md-7 col-sm-7 ">
-                                        @Html.TextBoxFor(model => model.auditQuestionsLst[i].expiryDate, new { placeholder = "Test Date", @class = "form-control" })
+                                        @Html.TextBoxFor(model => model.auditQuestionsLst[i].expiryDate, new { placeholder = "Expiry Date", @type = "date", @class = "form-control" })
                                     </div>
                                 </div>
                                 <div class="item form-group">
@@ -607,7 +600,7 @@
                                         Start Date
                                     </label>
                                     <div class="col-md-7 col-sm-7 ">
-                                        @Html.TextBoxFor(model => model.auditQuestionsLst[i].startDate, new { placeholder = "Test Date", @class = "form-control" })
+                                        @Html.TextBoxFor(model => model.auditQuestionsLst[i].startDate, new { placeholder = "start Date", @type = "date", @class = "form-control" })
                                     </div>
                                 </div>
                                 <div class="item form-group">
@@ -615,7 +608,7 @@
                                         Finish Date
                                     </label>
                                     <div class="col-md-7 col-sm-7 ">
-                                        @Html.TextBoxFor(model => model.auditQuestionsLst[i].finishDate, new { placeholder = "Test Date", @class = "form-control" })
+                                        @Html.TextBoxFor(model => model.auditQuestionsLst[i].finishDate, new { placeholder = "Finish Date", @type = "date", @class = "form-control" })
                                     </div>
                                 </div>
                             }
